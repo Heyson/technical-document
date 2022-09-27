@@ -1,0 +1,171 @@
+html, body {
+    min-width: 300px;
+    color: #fff;
+    background-color: #333;
+    font-family:'Open Sans', Arial, sans-serif;
+    line-height: 1.5;
+  }
+  
+  #navbar {
+    position: fixed;
+    min-width: 300px;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    border-right: solid;
+    border-color: magenta;
+  }
+  
+  header{
+    color: yellow;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: thin;
+  }
+  
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .description {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-left: 5px solid green;
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+  
+  }
+  #main-doc {
+    text-align: center;
+    margin: 0px;
+  }
+  
+  #navbar ul {
+    heigh: 88%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  #navbar li {
+    color: #ccc;
+    border-top: 1px solid;
+    list-style: none;
+    position: relative;
+    width: 100%;
+  }
+  
+  #navbar a {
+    display: block;
+    padding: 10px 30px;
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #main-doc {
+    position: absolute;
+    margin-left: 310px;
+    padding: 20px;
+    margin-bottom: 110px;
+  }
+  
+  section article {
+    color: #ccc;
+    margin: 15px;
+    font-size: 0.96em;
+  }
+  
+  section li {
+    margin: 15px 0px 0px 20px;
+  }
+  
+  code {
+    font-weight: 600;
+    font-size: 1.4em;
+    display: block;
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid cyan;
+  }
+  
+  .let {
+    color: darkred;
+  }
+   .value {
+     color: purple;
+   }
+   .console {
+     color: teal;
+   }
+   .string {
+     color: olive;
+   }
+   .comment {
+     color: #999;
+   }
+  
+   .arg {
+     color: orange;
+   }
+  
+  @media only screen and (max-width: 815px){
+    /*Mobile view*/
+    #navbar ul {
+      border: 1px solid;
+      height: 207px;
+    }
+  
+    #navbar {
+      background-color: #333;
+      position: absolute;
+      top: 0;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      max-height: 275px;
+      border: none;
+      z-index: 1;
+      border-bottom: 2px solid;
+    }
+  
+    #main-doc {
+      position: relative;
+      margin-left: 0px;
+      margin-top: 270px;
+    }
+  }
+  
+  @media only screen and (max-width: 400px) {
+    #main-doc {
+      margin-left: -20px;
+      width: 100%;
+      padding: 15px;
+      padding-left: 10px;
+      padding-right: 45px;
+      min-width: 233px;
+    }
+  }

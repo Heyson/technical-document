@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>JavaScript Data Types</header>
+      <ul>
+       <li><a class="nav-link" href="#Summary">Summary</a></li>
+        <li><a class="nav-link" href="#Undefined_Type">Undefined Type</a></li>
+        <li><a class="nav-link" href="#Null_Type">Null Type</a></li>
+        <li><a class="nav-link" href="#Number_Type">Number Type</a></li>
+        <li><a class="nav-link" href="#NaN_Type">Nan Type</a></li>
+        <li><a class="nav-link" href="#String_Type">String Type</a></li>
+        <li><a class="nav-link" href="#Boolean_Type">Boolean Type</a></li>
+        <li><a class="nav-link" href="#Symbol_Type">Symbol Type</a></li>
+        <li><a class="nav-link" href="#Bigint_Type">Bigint Type</a></li>
+        <li><a class="nav-link" href="#Object_Type">Object Type</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Summary">
+        <header>Summary</header>
+        <article>
+                    <p><strong>Summary</strong>: in this tutorial, you will learn about the JavaScript data types and their unique characteristics.</p>
+
+          <p><strong>JavaScript has the primitive data types:</strong>
+          <ol>
+            <li>null</li>
+            <li>undefined</li>
+            <li>boolean</li>
+            <li>number</li>
+            <li>string</li>
+            <li>symbol – available from ES2015</li>
+            <li>bigint – available from ES2020</li>
+          and a complex data type object.
+          </ol>
+          </p>
+          <p>JavaScript is a dynamically typed language. It means that a variable doesn’t associate with a type. In other words, a variable can hold a value of different types. For example:</p>
+          <code>
+            <span class="let">let</span> counter = <span class="value">120</span>; <span class="comment">// counter is a number</span>
+counter = <span class="value">false</span>;   <span class="comment">// counter is now a boolean</span>
+counter = <span class="string">"foo"</span>;   <span class="comment">// counter is now a string</span>
+          </code>
+          <p>To get the current type of the value that the variable stores, you use the typeof operator:</p>
+          <code><span class="let">let</span> counter = <span class="value">120</span>;
+<span class="console">"console</span>.log(<span class="let">typeof</span>(counter)); <span class="comment">// "number"</span>
+
+counter = <span class="value">false;</span> 
+<span class="console">"console</span>.log(<span class="let">typeof</span>(counter)); <span class="comment">// "boolean"</span>
+
+counter = <span class="string">"Hi"</span>;
+<span class="console">"console</span>.log(<span class="let">typeof</span>(counter)); <span class="comment">// "string"</span></code>
+<p>Output:</p>
+<code>
+<span class="string">"number"
+"boolean"
+"string"
+</span>
+</code>
+        </article>
+      </section>
+      <section class="main-section" id="Undefined_Type">
+        <header>Undefined Type</header>
+        <article>
+          <p>The undefined type is a primitive type that has only one value undefined. By default, when a variable is declared but not initialized, it is assigned the value of undefined.</p>
+
+<p>Consider the following example:</p>
+          <code><span class="let">let</span> counter;
+<span class="console">console</span>.log(counter);        <span class="comment">// undefined</span>
+<span class="console">console</span>.log(<span class="let">typeof</span> counter); <span class="comment">// undefined</span></code>
+         <p>In this example, the counter is a variable. Since counter hasn’t been initialized, it is assigned the value undefined. The type of counter is also undefined.</p>
+
+<p>It’s important to note that the typeof operator also returns undefined when you call it on a variable that hasn’t been declared:</p>
+<code><span class="console">console</span>.log(<span class="let">typeof</span> undeclaredVar); <span class="comment">// undefined<span></code>
+        </article>
+      </section>
+      <section class="main-section" id="Null_Type">
+        <header>Null Type</header>
+        <article>
+          <p>The null type is the second primitive data type that also has only one value null. For example:</p>
+          <code><span class="let">let</span> obj = <span class="value">null</span>;
+<span class="console">console</span>.log(<span class="let">typeof</span> obj); <span class="comment">// object</span></code>
+<p class="description">The typeof null returns object is a known bug in JavaScript. A proposal to fix this was proposed but rejected. The reason was the that fix would break a lot of existing sites.</p>
+<p>JavaScript defines that null is equal to undefined as follows:</p>
+<code><span class="console">console</span>.log(<span class="value">null</span> == <span class="value">undefined</span>); <span class="comment">// true</span></code>
+          
+        </article>
+      </section>
+      <section class="main-section" id="Number_Type">
+        <header>Number Type</header>
+        <article>
+          <p>JavaScript uses the number type to represent both integer and floating-point numbers.</p>
+
+<p>The following statement declares a variable and initializes its value with an integer:</p>
+          <code><span class="let">let</span> num = <span class="value">100</span>;</code>
+          <p>To represent a floating-point number, you include a decimal point followed by at least one number. For example:</p>
+          <code><span class="let">let</span> price= <span class="value">12.5</span>; 
+<span class="let">let</span> discount = <span class="value">0.05</span>;</code>
+<p>Note that JavaScript automatically converts a floating-point number into an integer number if the number appears to be a whole number.</p>
+
+<p>The reason is that Javascript always wants to use less memory since a floating-point value uses twice as much memory as an integer value. For example:</p>
+<code><span class="let">let</span> price = <span class="value">200.00</span>; <span class="comment">// interpreted as an integer 200</span></code>
+<p>To get the range of the number type, you use <span class="console">Number</span>.MIN_VALUE and <span class="console">Number</span>.MAX_VALUE. For example:</p>
+<code><span class="console">console</span>.log(<span class="console">Number</span>.MAX_VALUE); <span class="comment">// 1.7976931348623157e+308</span>
+<span class="console">console</span>.log(<span class="console">Number</span>.MIN_VALUE); <span class="comment">// 5e-324</span></code>
+<p>Also, you can use Infinity and -Infinity to represent the infinite number. For example:</p>
+<code><span class="console">console</span>.log(<span class="console">Number</span>.MAX_VALUE + <span class="console">Number</span>.MAX_VALUE); <span class="comment">// Infinity</span>
+<span class="console">console</span>.log(-<span class="console">Number</span>.MAX_VALUE - <span class="console">Number</span>.MAX_VALUE); <span class="comment">// -Infinity</span></code>
+         
+        </article>
+      </section>
+      <section class="main-section" id="NaN_Type">
+        <header>NaN Type</header>
+        <article>
+          <p>NaN stands for Not a Number. It is a special numeric value that indicates an invalid number. For example, the division of a string by a number returns NaN:.</p>
+          <code><span class="console">console</span>.log('<span class="string">a</span>'/<span class="value">2</span>);<span class="comment"> // NaN;</span></code>
+          <p>The NaN has two special characteristics:</p>
+          <ul>
+            <li>Any operation with NaN returns NaN.</li>
+            <li>The NaN does not equal any value, including itself.</li>
+          </ul>
+          <p>Here are some examples:</p>
+          <code><span class="console">console</span>.log(<span class="value">NaN</span>/<span class="value">2</span>); <span class="comment">// NaN</span>
+<span class="console">console</span>.log(<span class="value">NaN</span> == <span class="value">NaN</span>); <span class="comment">// false</span></code>
+        </article>
+      </section>
+      <section class="main-section" id="String_Type">
+        <header>String Type</header>
+        <article>
+          <p>In JavaScript, a string is a sequence of zero or more characters. A string literal begins and ends with either a single quote(') or a double quote (").</p>
+          <p>A string that begins with a double quote must end with a double quote. Likewise, a string that begins with a single quote must also end with a single quote:</p>
+          <code>
+            <span class="let">let</span> greeting = <span class="string">'Hi'</span>;
+<span class="let">let</span> message  = <span class="string">"Bye"</span>;
+          </code>
+          <p>If you want to single quote or double quotes in a literal string, you need to use the backslash to escape it. For example:</p>
+          <code><span class="let">let</span> message = <span class="string">'I\'m also a valid string'</span>; <span class="comment">// use \ to escape the single quote (')</span></code>
+          <p>JavaScript strings are immutable. This means that it cannot be modified once created. However, you can create a new string from an existing string. For example:</p>
+          <code><span class="let">let</span> str = <span class="string">'JavaScript'</span>;
+str = str + <span class="string">' String'</span>;</code>
+<p>In this example:</p>
+<ul>
+  <li>First, declare the str variable and initialize it to a string of 'JavaScript'.</li>
+  <li>Second, use the + operator to combine 'JavaScript' with ' String' to make its value as 'Javascript String'.</li>
+</ul>
+<p>Behind the scene, the JavaScript engine creates a new string that holds the new string 'JavaScript String' and destroys the original strings 'JavaScript' and ' String'.</p>
+
+<p>The following example attempts to change the first character of the string JavaScript:</p>
+<code><span class="let">let</span> s = <span class="string">'JavaScript'</span>;
+s[<span class="value">0</span>] = <span class="string">'j'</span>;
+<span class="console">console</span>.log(s)</code>
+<p>The output is:</p>
+<code><span class="string">'JavaScript'</span></code>
+<p>But not:</p>
+<code><span class="string">'javaScript'</span></code>
+        </article>
+      </section>
+      <section class="main-section" id="Boolean_Type">
+        <header>Boolean Type</header>
+        <article>
+          <p>The boolean type has two literal values: true and false in lowercase. The following example declares two variables that hold the boolean values.</p>
+          <code><span class="let">let</span> inProgress = <span class="value">true</span>;
+<span class="let">let</span> completed = <span class="value">false</span>;
+
+<span class="console">console</span>.log(<span class="let">typeof</span> completed); <span class="comment">// boolean</span></code>
+          <p>JavaScript allows values of other types to be converted into boolean values of true or false.</p>
+          <p>To convert a value of another data type into a boolean value, you use the Boolean() function. The following table shows the conversion rules:</p>
+          <table>
+            <tr>
+              <th>Type</th>
+              <th>true</th>
+              <th>false</th>
+            </tr>
+            <tr>
+              <td>string</td>
+              <td>non-empty string</td>
+              <td>empty string</td>
+            </tr>
+            <tr>
+              <td>number</td>
+              <td>non-zero number and Infinity</td>
+              <td>	0, NaN</td>
+            </tr>
+            <tr>
+              <td>object</td>
+              <td>non-null object</td>
+              <td>null</td>
+            </tr>
+             <tr>
+              <td>undefined</td>
+              <td>&nbsp;</td>
+              <td>undefined</td>
+            </tr>
+        </table>
+        <p>For example:</p>
+        <code><span class="console">console</span>.log(<span class="console">Boolean</span>(<span class="string">'Hi'</span>));<span class="comment">// true</span>
+<span class="console">console</span>.log(<span class="console">Boolean</span>(<span class="string">''</span>)); <span class="comment"> // false</span>
+
+<span class="console">console</span>.log(<span class="console">Boolean</span>(<span class="value">20</span>));  <span class="comment">// true</span>
+<span class="console">console</span>.log(<span class="console">Boolean</span>(<span class="value">Infinity</span>));  <span class="comment">// true</span>
+<span class="console">console</span>.log(<span class="console">Boolean</span>(<span class="value">0</span>)); <span class="comment"> // false</span>
+
+<span class="console">console</span>.log(<span class="console">Boolean</span>({<span class="arg">foo</span>: <span class="value">100</span>}));  <span class="comment">// true on non-empty object</span>
+<span class="console">console</span>.log(<span class="console">Boolean</span>(<span class="value">null</span>));<span class="comment">// false</span></code>
+      </section>
+      <section class="main-section" id="Symbol_Type">
+        <header>Symbol Type</header>
+        <article>
+          <p>JavaScript added a primitive type in ES6: the symbol. Different from other primitive types, the symbol type does not have a literal form.</p>
+          <p>To create a symbol, you call the Symbol function as follows:</p>
+          <code><span class="let">let</span> s1 = <span class="console">Symbol</span>();</code>
+          <p>The Symbol function creates a new unique value every time you call it.</p>
+          <code><span class="console">console</span>.log(<span class="console">Symbol</span>() == <span class="console">Symbol</span>()); <span class="comment">// false</span></code>
+          <p>Note that you’ll learn more about symbols in the symbol tutorial.</p>
+        </article>
+      </section>
+      <section class="main-section" id="Bigint_Type">
+        <header>Bigint Type</header>
+        <article>
+          <p>The bigint type represents the whole numbers that are larger than 253 – 1. To form a bigint literal number, you append the letter n at the end of the number:</p>
+          <code><span class="let">let</span> pageView = <span class="value">9007199254740991n</span>;
+<span class="console">console</span>.log(<span class="let">typeof</span>(pageView)); <span class="comment">// 'bigint'</span></code>
+          <p>And you’ll learn more about the bigint type here.</p>
+        </article>
+      </section>
+      <section class="main-section" id="Object_Type">
+        <header>Object Type</header>
+        <article>
+          <p>In JavaScript, an object is a collection of properties, where each property is defined as a key-value pair.</p>
+          <p>The following example defines an empty object using the object literal syntax:</p>
+          <code><span class="let">let</span> emptyObject = {};</code>
+          <p>The following example defines the person object with two properties: firstName and lastName.</p>
+          <code><span class="let">let</span> person = {
+    <span class="arg">firstName</span>: <span class="string">'John'</span>,
+    <span class="arg">lastName</span>: <span class="string">'Doe'</span>
+};</code>
+<p>A property name of an object can be any string. You can use quotes around the property name if it is not a valid identifier.</p>
+
+<p>For example, if the person object has a property first-name, you must place it in the quotes such as "first-name".</p>
+
+<p>A property of an object can hold an object. For example:</p>
+
+<code><span class="let">let</span> contact = {
+    <span class="arg">firstName</span>: <span class="string">'John'</span>,
+    <span class="arg">lastName</span>: <span class="string">'Doe'</span>,
+    <span class="arg">email</span>: <span class="string">'john.doe@example.com'</span>,
+    <span class="arg">phone</span>: <span class="string">'(408)-555-9999'</span>,
+    <span class="arg">address</span>: {
+        <span class="arg">building</span>: <span class="string">'4000'</span>,
+        <span class="arg">street</span>: <span class="string">'North 1st street'</span>,
+        <span class="arg">city</span>: <span class="string">'San Jose'</span>,
+        <span class="arg">state</span>: <span class="string">'CA'</span>,
+        <span class="arg">country</span>: <span class="string">'USA'</span>
+    }
+}</code>
+<p>The contact object has the firstName, lastName, email, phone, and address properties.</p>
+<p>The address property itself holds an object that has building,  street, city, state, and country properties.</p>
+<p>
+  To access a object’s property, you can use
+  <ul>
+    <li>The dot notation (.)</li>
+    <li>The array-like notation ([ ]).</li>
+  </ul>
+  The following example uses the dot notation (.) to access the firstName and lastName properties of the contact object.
+</p>
+<code><span class="let">console</span>.log(<span class="let">contact</span>.<span class="string">firstName</span>);
+<span class="let">console</span>.log(<span class="let">contact</span>.<span class="string">lastName</span>);</code>
+<p>If you reference a property that does not exist, you’ll get an undefined value. For example:</p>
+<code><span class="console">console</span>.log(contact.age); <span class="comment">// undefined</span></code>
+<p>The following example uses the array-like notation to access the email and phone properties of the contact object.</p>
+<code><span class="console">console</span>.log(contact[<span class="string">'phone'</span>]); <span class="comment">// '(408)-555-9999'</span>
+<span class="console">console</span>.log(contact[<span class="string">'email'</span>]); <span class="comment">// 'john.doe@example.com'</span></code>
+
+<h2>Summary</h2>
+<ul>
+  <li>JavaScript has the primitive types: number, string, boolean, null, undefined, symbol and bigint and a complex type: object.</li>
+</ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html> 
