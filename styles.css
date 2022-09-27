@@ -77,6 +77,10 @@ html, body {
     text-decoration: none;
     cursor: pointer;
   }
+
+  ol {
+    text-align: left;
+  }
   
   #main-doc {
     position: absolute;
